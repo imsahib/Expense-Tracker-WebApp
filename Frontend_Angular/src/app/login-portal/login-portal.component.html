@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    Spent Smart
+     <button class="register" mat-raised-button color="primary" type="button" (click)="register()">Register</button>
+   </header>
+
+
+<style>
+       body{
+          background-image: url('assets/spent_smart.png'),url('assets/Analysis.png');
+          background-repeat: no-repeat,no-repeat;
+          background-position: left,right;
+          background-size:998px,400px;
+          overflow: hidden;
+          
+        
+    }
+</style>
+<div class="welcome-section">
+  <mat-card  fxLayoutAlign="center center">
+  </mat-card>
+</div>
+<div class="login-section">
+  <mat-card fxFlex="30">
+    <mat-toolbar color="primary">Login Page</mat-toolbar>
+    <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+      <mat-form-field>
+        <input matInput placeholder="email" [(ngModel)]="email" [ngModelOptions]="{standalone:true}"class="input-field">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput type="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"placeholder="password" class="input-field">
+      </mat-form-field>
+  
+      <button  mat-raised-button color="primary" mat-raised-button type="submit" (click)="loginUser()" class="login-button">Login</button>
+    </form>
+ 
+  </mat-card>
+</div>
+
+</body>
+</html>
+
+
+
+  

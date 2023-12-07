@@ -1,0 +1,33 @@
+
+<!--
+<h1>Hey Angular</h1>
+<button (click)="makeRequest()">Make Request</button>
+
+<ul>
+
+    <li *ngFor="let user of UserDetails">
+         {{user.username}}  {{ user.email}}  {{user.password}}
+    </li>
+</ul>
+
+<form method="post">
+    <label>User Names</label><br>
+    <input type="text" [(ngModel)]="username" [ngModelOptions]="{standalone:true}" name="username">
+    <br>
+    <label>Password</label><br>
+    <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"   name="password">
+    <br> 
+    <label>Email</label><br>
+    <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone:true}"   name="email">
+    <br> <br>
+    <button type="submit" (click)="register()" >Submit </button>
+
+</form>
+<ol>
+<li *ngFor="let user of UserDetails">
+    {{user.username}}  {{ user.email}}  {{user.password}}
+</li>
+</ol>
+-->
+
+<router-outlet></router-outlet>

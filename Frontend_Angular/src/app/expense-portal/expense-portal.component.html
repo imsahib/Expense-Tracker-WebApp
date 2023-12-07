@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <header>
+    Spent-Smart,Welcome <span class="category4">{{username}}</span>
+    <button class="logout" mat-raised-button color="primary" type="button" (click)="logout()">LogOut</button>
+  </header>
+
+
+  <style>
+    body{
+       background-image: url('assets/spent_smart.png'),url('assets/Analysis.png');
+       background-repeat: no-repeat,no-repeat;
+       background-position: left,right;
+       background-size:1500x,200px;
+       background-size: cover;
+       
+    
+     
+ }
+</style>
+    <div class="content">
+        <mat-card fxFlex="40"fxLayout="column">
+          <div class="wallet-section">
+            <mat-card>
+            <mat-card-header class="title1">
+              <mat-card-title>Wallet</mat-card-title>
+            </mat-card-header>
+          </mat-card>
+           
+            <form id="incomeForm">
+              <mat-form-field>
+                <label>Income Amount</label>
+                <input matInput type="number"    [(ngModel)]="income" [ngModelOptions]="{standalone:true}" id="incomeAmount">
+              </mat-form-field>
+              <button mat-raised-button color="primary"    type="button" (click)="addIncome()">Add Income</button>
+            </form>
+            
+            <div class="transactions">
+
+              <mat-card>
+                <mat-card-header class="title2">
+                  <mat-card-title>Transaction</mat-card-title>
+                </mat-card-header>
+              </mat-card>
+              
+              <mat-card>
+                <mat-card-content>
+                  <ul class="transaction-list">
+                    <li *ngFor="let expense of ExpenseDetails" class="transaction-item">
+                      
+                      <div class="transaction-details">
+                        <span class="category1">{{ expense.category }} :  </span> 
+                        <span class="category2"> ₹ {{ expense.amount }} </span><br>
+                        <span class="category3"> {{ expense.description }} </span>  
+                         
+                      </div>
+                    
+                      <div>
+                        <button mat-raised-button color="primary"    type="button" (click)="OnDelete(expense.id)">Delete</button>
+                      </div>
+                    </li>
+                  </ul>
+                </mat-card-content>
+              </mat-card>
+
+
+
+
+
+              <mat-card>
+                <mat-card-content  *ngIf="showTransactionCard">
+                  <ul class="transaction-list">
+                    <li>
+                      <div class="transaction-details">
+                        <span class="category1"> Last Amount Added into Wallet  </span> <br>
+                        <span class="category4"> ₹ {{ storedIncome }}</span><br>
+                      </div>
+                      <div>
+                        <button mat-raised-button color="primary"  type="button" (click)="OnDeleteBalance()">Delete</button>
+                      </div>
+                      </li>
+                    </ul>
+                 
+                </mat-card-content>
+              </mat-card>
+            </div>
+            
+
+          </div>
+        </mat-card>
+    
+    <mat-card fxFlex="60">
+          <div class="expense-section">
+            <mat-card>
+              <mat-card-header class="title3">
+                <mat-card-title>Add Expense</mat-card-title>
+              </mat-card-header>
+            </mat-card>
+            <form id="expenseForm">
+              <mat-form-field>
+                <label>Expense Amount:</label>
+                <input matInput type="number" [(ngModel)]="amount" [ngModelOptions]="{standalone:true}"id="expenseAmount">
+              </mat-form-field>
+              <mat-form-field>
+                <label>Transaction Type:</label>
+                <mat-select id="transactionType" [(ngModel)]="transaction" [ngModelOptions]="{standalone:true}">
+                  <mat-option value="expand">Expand</mat-option>
+                  <mat-option value="income">Income</mat-option>
+                  <mat-option value="transfer">Transfer</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <label>Category:</label>
+                <mat-select id="category" [(ngModel)]="category" [ngModelOptions]="{standalone:true}">
+                  <mat-option value="shopping">Shopping</mat-option>
+                  <mat-option value="clothing">Clothing</mat-option>
+                  <mat-option value="grocery">Grocery</mat-option>
+                  <mat-option value="Food">Food</mat-option>
+                  <mat-option value="Travelling">Travelling</mat-option>
+                  <mat-option value="others">Others</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <label>Description:</label>
+                <input matInput type="text" [(ngModel)]="description" [ngModelOptions]="{standalone:true}"  id="description">
+              </mat-form-field>
+              <button mat-raised-button color="primary" (click)="addTransaction()"type="button">Add Transaction</button>
+            </form>
+          </div>
+        </mat-card>
+      </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        Spent Smart
+        <button class="login" mat-raised-button color="primary"  (click)="login()">Login</button>
+    </header>
+    <style>
+       body{
+          background-image: url('assets/spent_smart.png'),url('assets/Analysis.png');
+          background-repeat: no-repeat,no-repeat;
+          background-position: left,right;
+          background-size:1074px,500px;
+       
+        
+    }
+</style>
+
+    <div class="user-section">
+        <mat-card fxFlex="40">
+          <mat-toolbar color="primary">User Registration </mat-toolbar>
+          <form fxLayoutAlign="stretch" fxLayout="column" class="user-form">
+            <mat-form-field>
+                <input matInput placeholder="username" [(ngModel)]="username" [ngModelOptions]="{standalone:true}"class="input-field">
+              </mat-form-field>
+
+            <mat-form-field>
+              <input matInput placeholder="email" [(ngModel)]="email" [ngModelOptions]="{standalone:true}"class="input-field">
+            </mat-form-field>
+        
+            <mat-form-field>
+                <input matInput placeholder="DOB" [(ngModel)]="DOB" [ngModelOptions]="{standalone:true}"class="input-field">
+              </mat-form-field>
+              
+            <mat-form-field>
+              <input matInput type="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"placeholder="password" class="input-field">
+            </mat-form-field>
+        
+            <button  mat-raised-button color="primary"  (click)="addUser()" class="register">Register</button>
+          </form>
+       
+        </mat-card>
+      </div>
+    
+</body>
+</html>

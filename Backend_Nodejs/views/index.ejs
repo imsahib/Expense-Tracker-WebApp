@@ -1,0 +1,29 @@
+<form method="post" action="/user/add">
+    <label>User Names</label><br>
+    <input type="text" name="username">
+    <br>
+    <label>Password</label><br>
+    <input type="password" name="password">
+    <br> 
+    <label>Email</label><br>
+    <input type="text" name="email">
+    <br> <br>
+    <input type="submit" value="Submit"> 
+
+</form>
+
+<h1>Users</h1>
+<ul>
+<% UserDetails.forEach(function(user){ %> 
+    <l1><%= user.username %></l1><br>
+<% }) %>
+</ul>
+
+<h1>Expenses</h1>
+<ul>
+
+<% Expense.forEach(function(expense){ %> 
+    <l1><%= expense.category %></l1>
+    <l1><%= expense.amount %></l1> <br>
+<% }) %>
+</ul>

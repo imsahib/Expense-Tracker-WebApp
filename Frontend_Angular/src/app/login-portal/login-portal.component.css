@@ -1,0 +1,61 @@
+.welcome-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  
+  .welcome-heading {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .login-section {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-top: 100px;
+   
+    
+  }
+  
+  .input-field {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .login-button {
+    width: 100%;
+    background-color: #2196f3;
+  }
+  .login-button:hover {
+    background-color: #45a049;
+  }
+  .register{
+    float:right;
+  }
+  .register:hover{
+    background-color: #45a049;
+
+  }
+  header {
+    background-color: #333;
+    font-style: italic;
+    color: #fff;
+    text-align: center;
+    font-size:xx-large;
+    padding: 30px;
+  }
+
+  .mat-card button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .mat-card button:hover {
+    background-color: #45a049;
+  }
